@@ -2,6 +2,7 @@ flote (Flow Testing) is a continuous testing tool that works with every programm
 
 # Installation
 Install flote as a Gem
+
     gem install flote
 
 
