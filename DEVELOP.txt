@@ -1,0 +1,22 @@
+PREREQUISITE FOR DEVELOPING
+===========================
+To develop flote, you need the bundler gem. This usually means you have to install it with
+   sudo gem install bundler
+(sudo is needed on OSX with the ruby provided by Apple. In other cases - e.g. if you are on another platform or are using rvm you may omit sudo if you wish to install the gem just for the current user.)
+
+After installing the bundler gem call
+  bundle install
+to install all needed gems
+
+COMMON TASKS WHEN DEVELOPING
+============================
+Create a new gem of flote and install it just locally 
+   gem build flote.gemspec && 
+     sudo gem install flote-*.gem && 
+     mv -f flote-*.gem deploy/
+
+Create a new gem of flote and push it to RubyGems.org 
+   build_gem.sh
+
+Install the latest flote version from RubyGems.org
+   sudo gem install flote
