@@ -1,7 +1,6 @@
-require 'shellutils/shell_process'
 require 'flote/runner'
 
-describe Runner, "in run mode" do
+describe Runner do
 
   before (:each) do
     @shell_mock = mock.as_null_object
@@ -11,13 +10,23 @@ describe Runner, "in run mode" do
     @runner.run_command = "run-once.sh"
   end
 
-  it "should run ruby command" do
+  it "should run ruby command on kata file given as argument" do
 		process_mock = mock
     @shell_mock.should_receive(:execute).and_return process_mock
     @runner.start
   end
 
-  it "should not run if the source files weren't modified" do
+  it "should create a state directory for every state" do
+	  state_recorder_mock = mock.as_null_object
+	  @shell_mock.should_receive(:files_in_dir_tree).twice.and_return ['my_file.rb']
+	  @shell_mock.should_receive(:newest_dir_entry).twice.and_return 'my_file.rb'
+    @shell_mock.should_receive(:modification_time).with("my_file.rb").and_return 1
+    @runner.start
+    @shell_mock.should_receive(:modification_time).with("my_file.rb").and_return 2
+    @runner.execute
+  end
+
+  it "should not run if the kata file wasn't modified" do
     a_time = Time.new
 	  @shell_mock.should_receive(:files_in_dir_tree).twice.and_return ['my_file.rb']
 	  @shell_mock.should_receive(:newest_dir_entry).twice.and_return 'my_file.rb'

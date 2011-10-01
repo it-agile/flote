@@ -2,5 +2,5 @@
 
 flote_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(flote_dir) unless $LOAD_PATH.include?(flote_dir)
-require 'flote'
+require 'flote/flote'
 Flote.new(ARGV).run

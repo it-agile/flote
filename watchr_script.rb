@@ -1,1 +1,0 @@
-watch('(.*)\.rb') { |md| puts Time.new; system "cd app; spec ../spec; cd .."}

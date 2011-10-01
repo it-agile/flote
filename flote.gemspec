@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
    s.executables = ['flote']
    s.required_ruby_version = '>= 1.8.6'
    s.add_dependency('term-ansicolor', '>= 1.0.5')
-   s.add_dependency('shell-utils', '= 0.0.8')
+   s.add_dependency('shell-utils', '= 0.0.9')
 end
