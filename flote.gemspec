@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-   s.version = "0.0.01"
-   s.date = %q{2011-09-28}
+   s.version = "0.0.2"
+   s.date = %q{2012-01-16}
    s.name = %q{flote}
    s.authors = ["CodersDojo-Team"]
    s.email = %q{codersdojo@it-agile.de}
@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
    s.executables = ['flote']
    s.required_ruby_version = '>= 1.8.6'
    s.add_dependency('term-ansicolor', '>= 1.0.5')
-   s.add_dependency('shell-utils', '= 0.0.9')
+   s.add_dependency('shell-utils', '= 0.1.1')
 end
